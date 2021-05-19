@@ -31,6 +31,8 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
+# node persist store
+.node-persist
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
