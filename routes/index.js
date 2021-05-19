@@ -1,13 +1,8 @@
-var express = require("express");
-var router = express.Router();
-var exec = require("child_process").exec;
+const express = require("express");
+const router = express.Router();
+const AuthController = require("../controllers/auth");
+const ScriptsController = require("../controllers/scripts");
 
-router.post("/script", function (req, res, next) {
-  exec(req.body.script, function (error, stdout, stderr) {
-    console.log(error);
-    if (stderr) res.send({ title: stderr });
-    else res.send({ title: stdout });
-  });
-});
+router.post("/script", AuthController.checkToken, ScriptsController.runScript);
 
 module.exports = router;
