@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "gen": "node ./scripts/qr-creator"
+    "gen": "node ./scripts/qr-creator",
+    "show": "node ./scripts/qr-reader"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

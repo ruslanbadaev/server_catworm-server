@@ -29,6 +29,7 @@ const randKey = crypto.randomBytes(20).toString('hex');
   const token = jwt.sign(tokenData, secret.secret);
 
   await storage.setItem('key', randKey)
+  await storage.setItem('secret', secret.secret)
   qrcode.generate(token, { small: true }, function (qrcode) {
     console.log(qrcode);
   });
