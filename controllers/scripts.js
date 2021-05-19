@@ -5,7 +5,7 @@ var exec = require("child_process").exec;
 exports.runScript = async (req, res) => {
     try {
         exec(req.body.script, function (error, stdout, stderr) {
-            console.log(error);
+
             if (stderr) res.send({ title: stderr });
             else res.send({ title: stdout });
           });
