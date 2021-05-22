@@ -1,9 +1,9 @@
 {
-  "name": "vpsworm",
+  "name": "server_catworm",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npx pm2 start ./bin/www --name=vpsWorm",
+    "start": "npx pm2 start ./bin/www --name=catworm",
     "restart": "npx pm2 restart ./bin/www",
     "stop": "npx pm2 stop ./bin/www",
     "gen": "node ./scripts/qr-creator",
