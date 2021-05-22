@@ -1,41 +1,43 @@
 # vpsWorm
 
-#### Clone:
+###### Clone:
 ```
 git clone https://github.com/ruslanbadaev/vpsWorm.git
 ```
 
-#### Install modules:
+###### Install modules:
 ```
 cd vpsWorm
 npm i
 ```
 
-#### Generate QR for mobile app and kill last session:
+###### Generate QR for mobile app and kill last session:
 ```
 npm run gen
 ```
 
-#### Generate QR of current session:
+###### Generate QR of current session:
 ```
 npm run show
 ```
 
-#### Run app:
+###### Run app:
 ```
 npm start
 ```
 
-#### Stop app:
+###### Stop app:
 ```
 npm stop
 ```
 
-#### Restart app:
+###### Restart app:
 ```
 npm restart
 ```
 
 ... and write the secret word to generate qr
+<br/>
 <hr/>
+<br/>
 <img src="./screenshots/scr1.jpg">
