@@ -9,13 +9,23 @@ const crypto = require("crypto");
 (async () => {
   try {
     await storage.init();
+
+    // get secret word from storage
     const secret = await storage.getItem("secret");
-    const randKey = crypto.randomBytes(20).toString("hex");
+
+    // get random key from storage
+    const randKey = await storage.getItem("key");
+
+    // check for variables
     if (!secret || !randKey) throw 'Initialize qr code: "npm run gen"';
+
+    // init new token
     const tokenData = {
       ip: await publicIp.v4(),
-      key: await storage.getItem("key"),
+      key: randKey,
     };
+
+    // console print ascii header
     console.log(
       figlet.textSync("   Scan it \n with your \nmobile app", {
         horizontalLayout: "default",
@@ -24,6 +34,8 @@ const crypto = require("crypto");
         whitespaceBreak: true,
       })
     );
+
+    // generate new token
     const token = jwt.sign(tokenData, secret);
     qrcode.generate(token, { small: true }, function (qrcode) {
       console.log(qrcode);
