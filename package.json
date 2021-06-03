@@ -6,6 +6,7 @@
     "start": "npx pm2 start ./bin/www --name=catworm",
     "restart": "npx pm2 restart ./bin/www",
     "stop": "npx pm2 stop ./bin/www",
+    "dev": "npx nodemon ./bin/www",
     "gen": "node ./scripts/qr-creator",
     "show": "node ./scripts/qr-reader"
   },
