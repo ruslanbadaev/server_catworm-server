@@ -5,11 +5,11 @@ exports.runScript = async (req, res) => {
         // run bash script
         exec(req.body.script, function (error, stdout, err) {
             // send error
-            if (err) res.status(422).send({ message: err });
+            if (err) res.status(422).send(err);
             // send data
-            else res.status(201).send({ message: stdout });
-          });
+            else res.status(201).send(stdout);
+        });
     } catch (error) {
-        res.status(422).send({ message: error });
+        res.status(422).send(error);
     }
-  }
+}
