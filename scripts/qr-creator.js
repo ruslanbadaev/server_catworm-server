@@ -37,7 +37,7 @@ const crypto = require("crypto");
 
   // generate token
   const token = jwt.sign(tokenData, secret.secret);
-
+  console.log(token);
   // write data to storage
   await storage.setItem("key", randKey);
   await storage.setItem("secret", secret.secret);
